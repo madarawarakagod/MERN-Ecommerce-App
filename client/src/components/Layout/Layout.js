@@ -1,12 +1,16 @@
 import React from 'react'
+import Footer from './Footer'
+import Header from './Header'
 
-const Layout = () => {
+const Layout = (porps) => {
   return (
     <div>
-       <h1>Layout</h1> 
+      <Header/>
+       
+      <main>{porps.children}</main> 
        
        </div>
   )
-}
+};
 
 export default Layout
