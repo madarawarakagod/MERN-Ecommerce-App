@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout/Layout';
 const HomePage = () => {
   return (
-    <Layout>
+    <Layout title={'Best offer'}>
         <h1>HomePage</h1>
         </Layout>
   )
