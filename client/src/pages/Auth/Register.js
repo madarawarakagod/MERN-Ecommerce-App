@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useState } from "react";
 import Layout from '../../components/Layout/Layout'
+
 const Register = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    
+      // form function
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+      console.log(name,email,password,address,phone);
+     
+    };
+
+
     return (
         <Layout title="Register - Ecommer App">
-          <div className="form-container" style={{ minHeight: "90vh" }}>
+          <div className="register" >
+            <h1>register page</h1>
             <form onSubmit={handleSubmit}>
-              <h4 className="title">REGISTER FORM</h4>
+              
               <div className="mb-3">
                 <input
                   type="text"
@@ -62,19 +79,9 @@ const Register = () => {
                   required
                 />
               </div>
-              <div className="mb-3">
-                <input
-                  type="text"
-                  value={answer}
-                  onChange={(e) => setAnswer(e.target.value)}
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  placeholder="What is Your Favorite sports"
-                  required
-                />
-              </div>
+              
               <button type="submit" className="btn btn-primary">
-                REGISTER
+               submit
               </button>
             </form>
           </div>
