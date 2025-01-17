@@ -1,21 +1,37 @@
 import React, { useState } from "react";
 import Layout from '../../components/Layout/Layout'
-
+import {toast} from 'react-toastify';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
-    
-      // form function
+    const navigate =useNavigate();
+     // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-      console.log(name,email,password,address,phone);
-     
-    };
-
+    try {
+      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {
+        name,
+        email,
+        password,
+        phone,
+        address }
+      );
+      if (res.data.success) {
+        toast.success(res.data.message);
+        navigate("/login");
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
+  };
 
     return (
         <Layout title="Register - Ecommer App">
