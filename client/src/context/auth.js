@@ -8,6 +8,7 @@ const AuthProvider = ({ children }) => {
       user: null,
       token: "",
     });
+
     useEffect(() => {
       const data = localStorage.getItem("auth");
       if (data) {
@@ -19,8 +20,9 @@ const AuthProvider = ({ children }) => {
         });
       }
       //eslint-disable-next-line
-    }, [auth]);
-  
+    }, []);
+    
+
     return (
       <AuthContext.Provider value ={[auth,setAuth]}>
         {children}
