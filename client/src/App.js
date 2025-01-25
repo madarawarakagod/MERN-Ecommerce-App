@@ -13,10 +13,10 @@ import PrivateRoute from "./components/Routes/Private";
 function App() {
   return (
     <>
-      <Route>
+      <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<PrivateRoute />} />
-          <Route path="" element={<Dashboard/>}/>
+        <Route path="/dashboard" element={<PrivateRoute/>} />
+          <Route path="" element={<Dashboard/>}>
           </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
