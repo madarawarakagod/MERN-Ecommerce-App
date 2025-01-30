@@ -8,12 +8,12 @@ const Header = () => {
   const handleLogout=()=>{
        setAuth({
         ...auth,
-        user:null,
+        user:null, 
         token:"",
 
 
        });
-    localStorage.romoveItem('auth');
+    localStorage.romoveItem("auth");
     toast.success("Logout Successfully");
   };
   return (
