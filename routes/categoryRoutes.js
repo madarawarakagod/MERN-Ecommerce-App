@@ -1,13 +1,13 @@
 import express from "express";
 import { isAdmin, requireSignIn } from "./../middlewares/authMiddleware.js";
-import {createCategoryController,} from "./../controllers/categoryController.js";
+import {createCategoryController} from "./../controllers/categoryController.js";
 
 const router = express.Router();
 
 //routes
-// create category
+
 router.post(
-  "/create-category",
+  "create-category",
   requireSignIn,
   isAdmin,
   createCategoryController
