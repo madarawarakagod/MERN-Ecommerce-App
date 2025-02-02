@@ -14,5 +14,8 @@ router.post(
   createProductController
 );
 
+//get products
+router.get("/get-product", getProductController);
+
 
 export default router;
