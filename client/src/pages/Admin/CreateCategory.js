@@ -11,7 +11,7 @@ const CreateCategory = () => {
   const getAllCategory = async () => {
  
     try {
-      const { data } = await axios.post("/api/v1/category/create-category")
+      const { data } = await axios.post("/api/v1/category/get-category");
       if (data?.success) {
         setCategories(data.category);
       } 
@@ -22,7 +22,7 @@ const CreateCategory = () => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     getAllCategory();
   },[]);
 
@@ -46,8 +46,8 @@ const CreateCategory = () => {
                 </thead>
                 <tbody>
                   <tr>  
-                  {categories?.map((c) => (
-                    <td key={c._id}>{c.name}</td>
+                  {categories.map((c) => (
+                     <td key={c._id}>{c.name}</td>
                   ))}
                   </tr>
                   </tbody>
