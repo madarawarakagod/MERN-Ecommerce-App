@@ -68,19 +68,6 @@ const Header = () => {
 
 
 
-
-
-
-
-        
-        
-
-
-
-
-
-
-
         {!auth?.user ? (
                 <>
                   <li className="nav-item">
