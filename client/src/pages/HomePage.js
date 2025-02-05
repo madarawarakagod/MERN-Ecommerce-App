@@ -6,7 +6,7 @@ import { useCart } from "../context/cart";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Layout from "./../components/Layout/Layout";
-//import { AiOutlineReload } from "react-icons/ai";
+import { AiOutlineReload } from "react-icons/ai";
 //import "../styles/Homepage.css";
 
 const HomePage = () => {
@@ -14,7 +14,7 @@ const HomePage = () => {
   const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [checked, setChecked] = useState([]);
+  const [checked , setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -145,7 +145,7 @@ const HomePage = () => {
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
-              <div className="card m-2" style={{width:"18rem"}}>
+              <div className="card m-2" style={{width:"18rem"}} key={p._id}>
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
@@ -157,7 +157,7 @@ const HomePage = () => {
                     {p.description.substring(0, 30)}...
                     </p>
                
-                  <div className="card-text">$ {p.price}</p>
+                  <p className="card-text">$ {p.price}</p>
                     <button
                       className="btn btn-primary ms-1"
                       onClick={() => navigate(`/product/${p.slug}`)}
@@ -185,7 +185,7 @@ const HomePage = () => {
           <div className="m-2 p-3">
             {products && products.length < total && (
               <button
-                className="btn loadmore"
+                className="btn btn-warning"
                 onClick={(e) => {
                   e.preventDefault();
                   setPage(page + 1);
