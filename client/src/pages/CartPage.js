@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import Layout from "./../components/Layout/Layout";
 import { useCart } from "../context/cart";
 import { useAuth } from "../context/auth";
@@ -101,4 +101,4 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+export default CartPage;*/
