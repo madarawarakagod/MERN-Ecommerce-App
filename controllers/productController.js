@@ -306,7 +306,7 @@ export const productCategoryController = async (req, res) => {
     res.status(200).send({
       success: true,
       category,
-      products,
+       products,
     });
   } catch (error) {
     console.log(error);
