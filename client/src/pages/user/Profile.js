@@ -29,13 +29,23 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put("/api/v1/auth/register", {
+      const {data}= await axios.put("/api/v1/auth/profile", {
         name,
         email,
         password,
         phone,
         address,
       });
+      if (data?.errro) {
+        toast.error(data?.error);
+      } else {
+        setAuth({ ...auth, user: data?.updatedUser });
+        let ls = localStorage.getItem("auth");
+        ls = JSON.parse(ls);
+        ls.user = data.updatedUser;
+        localStorage.setItem("auth", JSON.stringify(ls));
+        toast.success("Profile Updated Successfully");
+      }
      
     } catch (error) {
       console.log(error);
@@ -45,7 +55,7 @@ const Profile = () => {
  
   return (
     <Layout title={"Your Profile"}>
-      <div className="container-fluid m-3 p-3 dashboard">
+      <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
             <UserMenu />
