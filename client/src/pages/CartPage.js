@@ -121,11 +121,12 @@ const CartPage = () => {
                           })
                         }
                       >
+                        Plase Login to checkout
                       </button>
                     )}
-            </div>
-                 )}
-                 </div>
+                </div>
+             )}
+        </div>
         </div>
       </div>
     </Layout>
