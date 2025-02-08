@@ -19,7 +19,7 @@ const Header = () => {
 
 
        });
-    localStorage.romoveItem("auth");
+    localStorage.removeItem("auth");
     toast.success("Logout Successfully");
   };
   return (
