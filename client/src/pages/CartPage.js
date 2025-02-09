@@ -167,6 +167,10 @@ const CartPage = () => {
                 </div>
              )}
              <div className="mt-2">
+             {!clientToken || !cart?.length ? (
+                  ""
+                ) : (
+                  <>
              
                    <DropIn
                      options={{
@@ -184,7 +188,10 @@ const CartPage = () => {
                     >
                      {loading ? "Processing ...." : "Make Payment"}
                     </button>
-                    </div>
+                    </>
+                )}
+               
+        </div>
         </div>
         </div>
       </div>
