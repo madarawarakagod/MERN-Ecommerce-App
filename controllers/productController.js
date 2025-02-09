@@ -349,6 +349,7 @@ export const braintreeTokenController = async (req, res) => {
 //payment
 export const brainTreePaymentController = async (req, res) => {
   try {
+    const  {cart,nonce} = req.body
     
   } catch (error) {
     console.log(error);
