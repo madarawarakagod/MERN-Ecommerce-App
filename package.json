@@ -16,6 +16,7 @@
   "dependencies": {
     "@testing-library/react": "^16.1.0",
     "bcrypt": "^5.1.1",
+    "braintree": "^3.28.0",
     "colors": "^1.4.0",
     "concurrently": "^9.1.2",
     "cors": "^2.8.5",
