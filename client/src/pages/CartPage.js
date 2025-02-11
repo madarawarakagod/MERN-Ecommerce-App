@@ -167,7 +167,8 @@ const CartPage = () => {
                 </div>
              )}
              <div className="mt-2">
-             {!clientToken || !cart?.length ? (
+             {
+             !clientToken || !cart?.length ? (
                   ""
                 ) : (
                   <>
